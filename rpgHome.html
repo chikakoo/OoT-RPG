@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>OoT RPG</title>
+	<script src="JavaScript/settings.js"></script>
+	<script src="JavaScript/helpers.js"></script>
+	<script src="JavaScript/data.js"></script>
+	<script src="JavaScript/events.js"></script>
+	<script src="JavaScript/hud.js"></script>
+	<script src="JavaScript/main.js"></script>
+	<script src="JavaScript/savingAndLoading.js"></script>
+	<link rel="stylesheet" href="Styles/styles.css">
+	<link rel="stylesheet" href="Styles/savePopup.css">
+</head>
+<body onload="onPageLoad()">
+	<div id="topContainer">
+		<div id="healthAndMagic">
+			<div id="controlsContainer">
+				<div id="controls">
+					<div id="removeHeartButton" onclick="onRemoveHealthClicked(event)"></div>
+					<div id="addHeartButton" onclick="onAddHealthClicked(event)"></div>
+					<div id="toggleDoubleDefenseButton" onclick="onDoubleDefenseClicked(event)"></div>
+				</div>
+			</div>
+			<div id="health" onclick="onHeartClicked(event)">
+				<div id="healthRow1">
+					<div id="heart-1"></div>
+					<div id="heart-2"></div>
+					<div id="heart-3"></div>
+					<div id="heart-4"></div>
+					<div id="heart-5"></div>
+					<div id="heart-6"></div>
+					<div id="heart-7"></div>
+					<div id="heart-8"></div>
+					<div id="heart-9"></div>
+					<div id="heart-10"></div>
+				</div>
+				<div id="healthRow2">
+					<div id="heart-11"></div>
+					<div id="heart-12"></div>
+					<div id="heart-13"></div>
+					<div id="heart-14"></div>
+					<div id="heart-15"></div>
+					<div id="heart-16"></div>
+					<div id="heart-17"></div>
+					<div id="heart-18"></div>
+					<div id="heart-19"></div>
+					<div id="heart-20"></div>
+				</div>
+			</div>
+			<div id="magicContainer">
+				<div id="magic" onclick="onMagicClicked(event)"></div>
+			</div>
+		</div>
+		
+		<div id="hudButtons">
+			<div id="ageSelecter" onclick="onAgeSelecterClicked(event)"></div>
+			<div id="songPopup" onclick="onSongsButtonClicked(event)"></div>
+			<div id="itemPopup" class="c-button" onclick="onItemButtonClicked(event)"></div>
+			<div id="equipmentPopup" class="c-button" onclick="onEquipmentButtonClicked(event)"></div>
+			<div id="medallionsPopup" class="c-button" onclick="onMedallionsButtonClicked(event)"></div>
+			<div id="saveLoadPopup" class="c-button" onclick="onSaveLoadPopupClicked(event)"></div>
+		</div>
+	</div>
+
+	<div id="middleContainer">
+		<div id="eventContainer">
+			<div id="levelButtonContainer">
+				<button id="buttonPunishment" title="Toggle punishments only" onclick="onPunishmentToggleClicked(event)"></button>
+				<button id="buttonEasy" onclick="onEasyClicked(event)"></button>
+				<button id="buttonMildlyIrritating" onclick="onMildlyIrritatingClicked(event)"></button>
+				<button id="buttonIrritating" onclick="onIrritatingClicked(event)"></button>
+				<button id="buttonAnnoying" onclick="onAnnoyingClicked(event)"></button>
+				<button id="buttonVeryAnnoying" onclick="onVeryAnnoyingClicked(event)"></button>
+				<button id="buttonExtremeBitch" onclick="onExtremeBitchClicked(event)"></button>
+			</div>
+			<div id="divEvents"></div>
+		</div>
+		<div id="progressContainer">
+			<div id="itemLabelContainer">
+				<div id="itemLabel"></div>
+			</div>
+			<div id="itemContainer"></div>
+			<div id="equipmentContainer"></div>
+			<div id="songsContainer"></div>
+			<div id="medallionsContainer"></div>
+		</div>
+	</div>
+	
+	<div id="rupeeContainer">
+		<div id="walletImage" onclick="onWalletClicked(event)"></div>
+		<input type="text" id="inputRupees" onchange="onRupeeCountUpdated(event)"></input>
+	</div>
+	
+	<div id="locationContainer">
+		<select id="comboBoxLocations" onchange="onLocationChanged(event)"></select>
+	</div>
+</body>
+</html>
