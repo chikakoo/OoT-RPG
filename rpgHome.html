@@ -9,11 +9,10 @@
 	<script src="JavaScript/events.js"></script>
 	<script src="JavaScript/hud.js"></script>
 	<script src="JavaScript/main.js"></script>
-	<script src="JavaScript/savingAndLoading.js"></script>
+	<script src="JavaScript/saveAndLoad.js"></script>
 	<link rel="stylesheet" href="Styles/styles.css">
-	<link rel="stylesheet" href="Styles/savePopup.css">
 </head>
-<body onload="Main.onPageLoad()">
+<body onload="Main.onPageLoad()" oncontextmenu="return false">
 	<div id="topContainer">
 		<div id="healthAndMagic">
 			<div id="controlsContainer">
@@ -60,7 +59,12 @@
 			<div id="itemPopup" class="c-button" onclick="onItemButtonClicked(event)"></div>
 			<div id="equipmentPopup" class="c-button" onclick="onEquipmentButtonClicked(event)"></div>
 			<div id="medallionsPopup" class="c-button" onclick="onMedallionsButtonClicked(event)"></div>
-			<div id="saveLoadPopup" class="c-button" onclick="onSaveLoadPopupClicked(event)"></div>
+			<div id="saveLoadPopup" 
+				class="c-button" 
+				title="Left click to save; right click to load"
+				onclick="SaveAndLoad.saveJSON(event)"
+				oncontextmenu="SaveAndLoad.loadJSON(event)">
+			</div>
 		</div>
 	</div>
 

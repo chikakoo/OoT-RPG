@@ -3,6 +3,7 @@
 }
 
 body {
+	user-select: none;
 	background-repeat: no-repeat;
   	background-size: cover;
   	background-attachment: fixed;
@@ -267,8 +268,6 @@ body {
 	border: none;
 	background: none;
 	
-	-webkit-appearance: none;
-    -moz-appearance: none;
     text-indent: 1px;
     text-overflow: '';
 }
