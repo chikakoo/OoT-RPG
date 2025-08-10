@@ -265,6 +265,10 @@ let Events = [
 		text: "You must burn the item check",
 		levels: [ { level: Level.ANNOYING } ]
 	},
+	{
+		text: "Have the Lens of Truth active",
+		levels: [ { level: Level.ANNOYING } ]
+	},
 
 	{
 		text: "Exit and re-enter the map; get to the item while blindfolded",
@@ -382,6 +386,15 @@ let Events = [
 			{ level: Level.IRRITATING, location: Location.DODONGOS_CAVERN },
 		],
 	},
+	{
+		text: "Stand in both eyes of the big dodongo",
+		isPunishment: true,
+		levels: [ 
+			{ level: Level.MILDLY_IRRITATING, location: Location.DODONGOS_CAVERN, items: [ Item.BOMB ] },
+			{ level: Level.MILDLY_IRRITATING, location: Location.DODONGOS_CAVERN, items: [ Item.BOMBCHU ] },
+			{ level: Level.ANNOYING, location: Location.DODONGOS_CAVERN },
+		],
+	},
 	
 	// Jabu Jabu specific
 	{
@@ -468,8 +481,8 @@ let Events = [
 		text: "Change the water level",
 		isPunishment: true,
 		levels: [ 
-			{ level: Level.MILDLY_IRRITATING, location: Location.WATER_TEMPLE, songs: [ Song.ZELDAS_LULLABY ] },
-			{ level: Level.ANNOYING, location: Location.WATER_TEMPLE }
+			{ level: Level.ANNOYING, location: Location.WATER_TEMPLE, songs: [ Song.ZELDAS_LULLABY ] },
+			{ level: Level.VERY_ANNOYING, location: Location.WATER_TEMPLE }
 		]
 	},
 	{
@@ -479,6 +492,13 @@ let Events = [
 			{ level: Level.MILDLY_IRRITATING, location: Location.WATER_TEMPLE, items: [ Item.OCARINA ] },
 			{ level: Level.MILDLY_IRRITATING, location: Location.WATER_TEMPLE, items: [ Item.BOTTLE1 ] },
 			{ level: Level.ANNOYING, location: Location.WATER_TEMPLE }
+		]
+	},
+	{
+		text: "Jump in the toilet room and swirl around it",
+		isPunishment: true,
+		levels: [ 
+			{ level: Level.IRRITATING, location: Location.WATER_TEMPLE, age: Age.ADULT }
 		]
 	},
 	
@@ -582,6 +602,13 @@ let Events = [
 			{ level: Level.IRRITATING, location: Location.SPIRIT_TEMPLE, age: Age.ADULT }
 		]
 	},
+	{
+		text: "Jump off the hands into Desert Colossus",
+		isPunishment: true,
+		levels: [ 
+			{ level: Level.IRRITATING, location: Location.SPIRIT_TEMPLE }
+		]
+	},
 	
 	// Ice Cavern specific
 	{
@@ -636,7 +663,7 @@ let Events = [
 	{
 		text: "Talk to a scrub in the castle", 
 		isPunishment: true,
-		levels: [ { level: Level.EASY, location: Location.GANONS_CASTLE } ],
+		levels: [ { level: Level.EASY, location: Location.GANONS_CASTLE } ]
 	},
 	{
 		text: "Buy a potion in the castle", 
@@ -645,18 +672,17 @@ let Events = [
 			{ level: Level.MILDLY_IRRITATING, location: Location.GANONS_CASTLE, items: [ Item.RUTOS_LETTER ] },
 			{ level: Level.MILDLY_IRRITATING, location: Location.GANONS_CASTLE, items: [ Item.BOTTLE1 ] },
 			{ level: Level.ANNOYING, location: Location.GANONS_CASTLE },
-		],
+		]
 	},
 ];
 
 /**
  * Gets the list of events based on the given level
  * @param level - the level to give it
- * @param punishmentsOnly - true to only return back results that are punishments
  */
-let getEventsByLevel = function(level, punishmentsOnly) {
+let getEventsByLevel = function(level) {
 	return _getCurrentEvents().filter(x => {
-		return x.level === level && (!punishmentsOnly || x.isPunishment);
+		return x.level === level && (!Main.punishmentsOnly || x.isPunishment);
 	});
 }
 

@@ -49,7 +49,7 @@ let onSaveLoadPopupClicked = function() {
 		
 		document.body.removeChild(saveLoadPopup);
 		
-		onPageLoad();
+		Main.onPageLoad();
 	};
 	addCssClass(loadButton, "popupButton");
 	

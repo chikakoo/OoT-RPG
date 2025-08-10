@@ -46,7 +46,7 @@ let updateHealth = function() {
 		}
 	}
 	
-	refreshDisplayedEvents();
+	Main.refreshDisplayedEvents();
 };
 
 /**
@@ -158,7 +158,7 @@ let updateMagic = function() {
 			break;
 	}
 	
-	refreshDisplayedEvents();
+	Main.refreshDisplayedEvents();
 }
 
 /**
@@ -194,7 +194,7 @@ let updateAgeSelecter = function() {
 			break;
 	}
 	
-	refreshDisplayedEvents();
+	Main.refreshDisplayedEvents();
 }
 
 /**
@@ -228,7 +228,7 @@ let onRupeeCountUpdated = function(event, useTemp) {
 
 	inputRupees.value = rupees;
 	_updateRupeeHighlighting(inputRupees);
-	refreshDisplayedEvents();
+	Main.refreshDisplayedEvents();
 }
 
 /**
@@ -255,7 +255,7 @@ let onWalletClicked = function(event) {
 	updateWallet();
 	updateRupees();
 	
-	refreshDisplayedEvents();
+	Main.refreshDisplayedEvents();
 };
 
 /**
@@ -341,7 +341,7 @@ let onItemClicked = function(item, divItem) {
 	_addOpacityForUnownedItem(item, divItem);
 	onItemMouseOver(item);
 	
-	refreshDisplayedEvents();
+	Main.refreshDisplayedEvents();
 };
 
 /**

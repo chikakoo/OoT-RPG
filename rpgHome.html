@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="Styles/styles.css">
 	<link rel="stylesheet" href="Styles/savePopup.css">
 </head>
-<body onload="onPageLoad()">
+<body onload="Main.onPageLoad()">
 	<div id="topContainer">
 		<div id="healthAndMagic">
 			<div id="controlsContainer">
@@ -67,13 +67,13 @@
 	<div id="middleContainer">
 		<div id="eventContainer">
 			<div id="levelButtonContainer">
-				<button id="buttonPunishment" title="Toggle punishments only" onclick="onPunishmentToggleClicked(event)"></button>
-				<button id="buttonEasy" onclick="onEasyClicked(event)"></button>
-				<button id="buttonMildlyIrritating" onclick="onMildlyIrritatingClicked(event)"></button>
-				<button id="buttonIrritating" onclick="onIrritatingClicked(event)"></button>
-				<button id="buttonAnnoying" onclick="onAnnoyingClicked(event)"></button>
-				<button id="buttonVeryAnnoying" onclick="onVeryAnnoyingClicked(event)"></button>
-				<button id="buttonExtremeBitch" onclick="onExtremeBitchClicked(event)"></button>
+				<button id="buttonPunishment" title="Toggle punishments only" onclick="Main.onPunishmentToggleClicked(event)"></button>
+				<button id="buttonEasy" onclick="Main.onEasyClicked(event)"></button>
+				<button id="buttonMildlyIrritating" onclick="Main.onMildlyIrritatingClicked(event)"></button>
+				<button id="buttonIrritating" onclick="Main.onIrritatingClicked(event)"></button>
+				<button id="buttonAnnoying" onclick="Main.onAnnoyingClicked(event)"></button>
+				<button id="buttonVeryAnnoying" onclick="Main.onVeryAnnoyingClicked(event)"></button>
+				<button id="buttonExtremeBitch" onclick="Main.onExtremeBitchClicked(event)"></button>
 			</div>
 			<div id="divEvents"></div>
 		</div>
@@ -94,7 +94,7 @@
 	</div>
 	
 	<div id="locationContainer">
-		<select id="comboBoxLocations" onchange="onLocationChanged(event)"></select>
+		<select id="comboBoxLocations" onchange="Main.onLocationChanged(event)"></select>
 	</div>
 </body>
 </html>
