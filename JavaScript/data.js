@@ -247,11 +247,13 @@ let setRupeeCount = function(newRupeeAmount) {
 let getMaxRupees = function() {
 	switch(Upgrades.WALLET.currentUpgrade) {
 		case 1:
-			return 200;
+			return 99;
 		case 2:
+			return 200;
+		case 3:
 			return 500;
 		default:
-			return 99;
+			return 999;
 	}
 };
 
